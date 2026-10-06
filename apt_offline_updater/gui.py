@@ -24,6 +24,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from . import __version__
 from .config import Config, load_settings, save_settings
 from .errors import Cancelled, WorkflowError
 from .remote import paramiko
@@ -83,7 +84,7 @@ class WorkflowThread(QThread):
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Airgapped APT Patch")
+        self.setWindowTitle(f"Airgapped APT Patch v{__version__}")
         self.resize(880, 860)
         self.setMinimumSize(760, 700)
         self.cfg0 = load_settings()
