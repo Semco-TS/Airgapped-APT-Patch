@@ -1,7 +1,5 @@
 # Airgapped APT Patch
 
-**TEST ONLY.** This project is for evaluation and controlled testing. Do not rely on it to maintain production systems. Test first against a disposable server or virtual machine and review all proposed package changes before installation.
-
 Airgapped APT Patch moves Ubuntu package update data through a Windows PC that has internet access and can also reach the target server over SSH. The server does not need direct access to the internet, but it must be reachable from the PC while the update is run. This is not a tool for a server that is completely disconnected from the PC.
 
 ## How It Works
@@ -75,4 +73,4 @@ PyInstaller's default output is a folder-based build under `dist\Airgapped-APT-P
 - Confirm the SSH host-key fingerprint independently before trusting it.
 - Review the package summary and server logs. The application ultimately runs APT with automatic confirmation (`-y`); the pre-install confirmation prompt is enabled by default but can be disabled.
 - Test cancellation, interrupted transfers, cleanup settings, stale or unavailable mirror files, and both upgrade types before considering broader use.
-- This project has not been certified for production use, unattended fleet updates, or every Ubuntu/Debian release and repository configuration.
+- This project has not been certified for unattended fleet updates, or every Ubuntu/Debian release and repository configuration.
